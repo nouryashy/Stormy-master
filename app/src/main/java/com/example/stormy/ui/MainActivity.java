@@ -43,7 +43,9 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    public static final String DAILY_FORECAST="DAIYLY_FORECAST";
+    public static final String DAIYLY_FORECAST ="DAIYLY_FORECAST";
+    public static final String HOURLY_FORECAST="HOURLY_FORECAST";
+
     private Forecast mForecast;
 
       TextView mTimeLabel;
@@ -140,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                   String jsonData=response.body().string();
                     Log.v(TAG, jsonData);
                     if (response.isSuccessful()) {
-                        mForecast=paseForecastDetails(jsonData);
+                        mForecast= parseForecastDetails(jsonData);
                         //to run the updates on the thread
                         runOnUiThread(new Runnable() {
                             @Override
@@ -194,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //class to parse hourly and daily data
 
-private Forecast paseForecastDetails (String jsonData)throws JSONException {
+private Forecast parseForecastDetails(String jsonData)throws JSONException {
         Forecast forecast=new Forecast();
         forecast.setCurrent(getCurrentDetails(jsonData));
         forecast.setHourlyForecast(getHourlyForecast(jsonData));
@@ -304,13 +306,14 @@ private Forecast paseForecastDetails (String jsonData)throws JSONException {
 
 
     public void StartHourActivity(View view) {
-        Intent intent=new Intent(this, HourlyForecastActivity.class);
-       // intent.putExtra(HOURLY_FORECAST,)
+        Intent intent = new Intent(this, HourlyForecastActivity.class);
+        intent.putExtra(HOURLY_FORECAST, mForecast.getHourlyForecast());
+        startActivity(intent);
     }
 
     public void StartDayActivity(View view) {
         Intent intent=new Intent(this, DailyForecastActivity.class);
-        intent.putExtra(DAILY_FORECAST,mForecast.getDailyForecast());
+        intent.putExtra(DAIYLY_FORECAST,mForecast.getDailyForecast());
         startActivity(intent);
     }
 }
