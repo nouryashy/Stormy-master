@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".DailyForecastActivity"></activity>
-        <activity android:name=".HourlyForecastActivity" />
+        <activity android:name=".ui.DailyForecastActivity"></activity>
+        <activity android:name=".ui.HourlyForecastActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:screenOrientation="portrait">

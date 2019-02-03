@@ -17,8 +17,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.stormy.DailyForecastActivity;
-import com.example.stormy.HourlyForecastActivity;
 import com.example.stormy.R;
 import com.example.stormy.weather.Current;
 import com.example.stormy.weather.Day;

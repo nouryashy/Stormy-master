@@ -1,4 +1,4 @@
-package com.example.stormy;
+package com.example.stormy.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 
+import com.example.stormy.R;
 import com.example.stormy.adapters.HourAdapter;
 import com.example.stormy.ui.MainActivity;
 import com.example.stormy.weather.Hour;

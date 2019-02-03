@@ -7,7 +7,7 @@
     android:paddingLeft="32dp"
     android:paddingTop="16dp"
     android:paddingRight="32dp"
-    tools:context=".HourlyForecastActivity"
+    tools:context=".ui.HourlyForecastActivity"
     android:background="@drawable/bg_gradient">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
